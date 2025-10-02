@@ -5,10 +5,10 @@ import HomeSectionTitle from '../HomeSectionTitle'
 const HowItWorks = () => {
   return (
     <div className='relative py-[120px] flex items-center justify-center z-0'>
-    <img src="./assets/images/shape/mesh-pink.png" alt="" className='absolute z-0 top-[-10%] w-[80%] mx-auto' />
-      <div className="relative z-10">
+    <img src="./assets/images/shape/mesh-pink.png" alt="" className='absolute z-0 top-[-10%] w-[70%] mx-auto' />
+      <div className="relative z-10 mt-[-50px]">
         <ContainerWrapper>
-          <HomeSectionTitle title="How It Works" titleMargin="auto" titleMaxW="510px" alignment="text-center"/>
+          <HomeSectionTitle title="How It Works" titleMargin="mt-0 mx-auto" titleMaxW="510px" alignment="text-center"/>
           <div className="w-full mt-[50px]">
             <img src="./assets/images/img/how-work-img.png" alt="img" className='w-full' />
           </div>

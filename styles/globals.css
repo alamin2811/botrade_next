@@ -1121,6 +1121,7 @@ h4.text-stroke{
   -webkit-animation: rotate360 3s linear infinite;
 }
 
+
 .partners-logo:hover {
   cursor: pointer;
 }
@@ -1178,6 +1179,12 @@ h4.text-stroke{
   to {
     transform: rotate(360deg);
   }
+}
+
+.rotate360{
+  opacity: 1;
+  animation: rotate360 3s linear infinite;
+  -webkit-animation: rotate360 3s linear infinite;
 }
 
 

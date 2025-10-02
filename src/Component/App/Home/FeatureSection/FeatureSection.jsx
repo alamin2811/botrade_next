@@ -37,7 +37,7 @@ const FeatureSection = () => {
   return (
     <div className="mt-[-145px]">
       <ContainerWrapper>
-        <div className="flex flex-wrap items-start justify-start mx-[-45px]">
+        <div className="flex flex-wrap items-start justify-start mx-[-15px]">
           {features.map((feature, i) => (
             <div key={i} className="px-[15px] md:w-full lg:w-1/2 w-1/3">
               <div
