@@ -26,7 +26,7 @@ const positionData = [
 
 const InvestContent = () => {
     return (
-        <div className="relative z-10 mt-[-435px]">
+        <div className="relative z-10 mt-[-435px] mb-[90px]">
             <ContainerWrapper>
                 {/* Intro Text */}
                 <div className="max-w-[1070px] mx-auto">

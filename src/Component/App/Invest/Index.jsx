@@ -11,7 +11,7 @@ const Invest = () => {
   return (
     <div className="overflow-x-hidden">
         <Header/>
-        <Breadcumbs pageTitle="AI Trading Pool" pageSubtitle="AI-powered trading strategies with machine learning algorithms"/>
+        <Breadcumbs pageTitle="AI Trading Pool" pageSubtitle="AI-powered trading strategies with machine learning algorithms"  display="flex"/>
         <InvestContent/>
         
         
