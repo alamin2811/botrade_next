@@ -52,7 +52,7 @@ const OurPartners = () => {
                       <img src={logo} alt={`partner-${index + 1}`} className='' />
                     </span>
                   </span>
-                </div>
+                </div> 
 
                 {/* Gradient divider - hide for last item */}
                 {index !== partners.length - 1 && (
