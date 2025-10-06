@@ -23,7 +23,7 @@ const HomeBanner = ({ account, connectWallet }) => {
             <p className='text-[18px] xl:text-[16px] ld:text-[15px] md:text-[14px] font-[500] text-[rgba(255,255,255,0.90)] text-center mb-[50px] xl:mb-[40px] lg:mb-[30px] md:mb-[20px]'>
               Experience the future of DeFi with our AI-based investment pools. Advanced algorithms, autonomous strategies, and real returns—all on-chain and decentralized.
             </p>
-            <ul className='text-center flex justify-center items-start gap-x-[50px] md:gap-x-[30px] gap-y-[10px] text-white font-[700] text-[18px] md:text-[16px] sm:text-[14px] space-grotesk mb-[50px] lg:mb-[30px]'>
+            <ul className='text-center flex justify-center items-start gap-x-[50px] md:gap-x-[30px] gap-y-[10px] text-white font-[700] text-[18px] md:text-[16px] sm:text-[14px] space-grotesk'>
               <li className='flex items-center justify-start gap-[8px]'><img src="./assets/images/icons/check-circle.svg" alt="icon" />Secure</li>
               <li className='flex items-center justify-start gap-[8px]'><img src="./assets/images/icons/check-circle.svg" alt="icon" />Transparent</li>
               <li className='flex items-center justify-start gap-[8px]'><img src="./assets/images/icons/check-circle.svg" alt="icon" />Decentralized</li>
@@ -33,7 +33,7 @@ const HomeBanner = ({ account, connectWallet }) => {
             {!account && (
               <button
                 onClick={connectWallet}
-                className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-[none] outline-[none] box-shadow-[none] rounded-[10px] h-[60px] w-[200px] mx-auto px-[15px] flex items-center justify-center gap-[10px] text-[#111] capitalize text-center font-[600] text-[16px] sm:text-[14px] space-grotesk"
+                className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-[none] outline-[none] box-shadow-[none] rounded-[10px] h-[60px] w-[200px] mx-auto px-[15px] flex items-center justify-center gap-[10px] text-[#111] capitalize text-center font-[600] text-[16px] sm:text-[14px] space-grotesk mt-[50px] lg:mt-[30px]"
               >
                 <img src="./assets/images/icons/wallet.svg" alt='icon' className='brightness-0' />
                 <span className="btn-hov-text">

@@ -100,28 +100,69 @@ const Header = () => {
           <div className="right">
             <div className="flex items-center justify-end gap-[16px]">
               {/* ✅ Social Icons */}
-              <ul className="flex items-center justify-end gap-[16px] lg:hidden">
-                {[
-                  { href: "#", src: "./assets/images/icons/book.svg", size: 22 },
-                  { href: "#", src: "./assets/images/icons/tg.svg", size: 20 },
-                  { href: "#", src: "./assets/images/icons/x.svg", size: 16 },
-                ].map((icon, idx) => (
-                  <li key={idx} className="social-icon-btn group relative">
-                    <Link
-                      href={icon.href}
-                      className="flex btn-has-shape items-center justify-center rounded-[12px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[5px] h-[50px] w-[50px] transition-all duration-300 hover:bg-[rgba(255,255,255,0.20)]"
-                    >
-                      <img
-                        src={icon.src}
-                        alt="icon"
-                        style={{ width: `${icon.size}px` }}
-                        className="transition-transform duration-300 group-hover:rotate-[15deg]"
-                      />
-                    </Link>
-                  </li>
-                ))}
+              <ul className='flex items-center justify-end gap-[16px]'>
+                <li className="social-icon-btn">
+                  <Link
+                    href="#"
+                    className="flex btn-has-shape items-center justify-center rounded-[12px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[5px] h-[50px] w-[50px] sm:h-[50px] sm:w-[50px]"
+                  >
+                    <span className="btn-icons !h-[24px] mt-[-3px]">
+                      <span className="btn-icon mt-[0px]">
+                        <img src="./assets/images/icons/book.svg" alt="icon" className="w-[22px] mb-[5px]" />
+                      </span>
+                      <span className="btn-icon my-[0px]">
+                        <img src="./assets/images/icons/book.svg" alt="icon" className="w-[22px]" />
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+                <li className="social-icon-btn">
+                  <Link
+                    href="#"
+                    className="flex btn-has-shape items-center justify-center rounded-[12px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[5px] h-[50px] w-[50px] sm:h-[50px] sm:w-[50px]"
+                  >
+                    <span className="btn-icons !h-[24px]">
+                      <span className="btn-icon mb-[0px] mt-[-3px]">
+                        <img
+                          src="./assets/images/icons/tg.svg"
+                          alt="icon"
+                          className="w-[20px] mb-[3px]"
+                        />
+                      </span>
+                      <span className="btn-icon my-[0px]">
+                        <img
+                          src="./assets/images/icons/tg.svg"
+                          alt="icon"
+                          className="w-[20px]"
+                        />
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+                <li className="social-icon-btn">
+                  <Link
+                    href="#"
+                    className="flex btn-has-shape items-center justify-center rounded-[12px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[5px] h-[50px] w-[50px] sm:h-[50px] sm:w-[50px]"
+                  >
+                    <span className="btn-icons !h-[24px]">
+                      <span className="btn-icon my-[0px]">
+                        <img
+                          src="./assets/images/icons/x.svg"
+                          alt="icon"
+                          className="w-[16px]"
+                        />
+                      </span>
+                      <span className="btn-icon my-[0px]">
+                        <img
+                          src="./assets/images/icons/x.svg"
+                          alt="icon"
+                          className="w-[16px]"
+                        />
+                      </span>
+                    </span>
+                  </Link>
+                </li>
               </ul>
-
               {/* Buttons */}
               <div className="bg-[rgba(255,255,255,0.10)] lg:hidden p-[7px] rounded-[12px] flex items-end justify-end relative">
                 <Link
