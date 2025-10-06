@@ -26,23 +26,23 @@ const positionData = [
 
 const InvestContent = () => {
     return (
-        <div className="relative z-10 mt-[-435px] mb-[90px]">
+        <div className="relative z-10 mt-[-435px] mb-[90px] lg:mb-[60px] md:mb-[40px]">
             <ContainerWrapper>
                 {/* Intro Text */}
                 <div className="max-w-[1070px] mx-auto">
-                    <p className="text-center text-[18px] font-[500] text-[rgba(255,255,255,0.90)] mb-[50px]">
+                    <p className="text-center text-[18px] lg:text-[16px] md:text-[14px] font-[500] text-[rgba(255,255,255,0.90)] mb-[50px] lg:mb-[30px]">
                         An AI-driven strategy executing trades across the top 100 crypto assets. Signal-based, high-frequency. Autonomous AI Strategies. Real Returns. Decentralized Execution. Knidos is your on-chain AI fund manager. Choose from three optimized pools and let our algorithm do the work—while you stay in control.
                     </p>
                 </div>
 
                 {/* Top Info Cards */}
-                <div className="flex flex-wrap mx-[-15px]">
+                <div className="flex flex-wrap mx-[-15px] lx:mx-[-10px]">
                     {cardData.map((card, index) => (
-                        <div key={index} className="w-1/4 px-[15px]">
-                            <div className="rounded-[20px] bg-[rgba(255,255,255,0.05)] p-[30px] overflow-hidden mb-[30px]">
+                        <div key={index} className="w-1/4 lg:w-1/2 px-[15px] lg:px-[10px]">
+                            <div className="rounded-[20px] bg-[rgba(255,255,255,0.05)] p-[30px] md:px-[15px] md:py-[25px] overflow-hidden mb-[30px] lg:mb-[20px]">
                                 <img src={card.icon} alt="icon" />
-                                <h3 className="text-white font-[700] text-[30px] space-grotesk mt-[30px] mb-[5px] leading-[120%]">{card.value}</h3>
-                                <p className="text-[16px] font-[600] text-[rgba(255,255,255,0.85)]">{card.label}</p>
+                                <h3 className="text-white font-[700] text-[30px] md:text-[24px] space-grotesk mt-[30px] md:mt-[20px] mb-[5px] leading-[120%]">{card.value}</h3>
+                                <p className="text-[16px] md:text-[14px] font-[600] text-[rgba(255,255,255,0.85)]">{card.label}</p>
                             </div>
                         </div>
                     ))}
@@ -50,18 +50,18 @@ const InvestContent = () => {
 
                 {/* Vault Actions Token Info and Your Position */}
                 <div className="flex flex-wrap mx-[-15px]">
-                    <div className="w-2/3 px-[15px]">
+                    <div className="w-2/3 lg:w-full px-[15px]">
                         <VaultActions/>
                     </div>
 
                     {/* Token Info */}
-                    <div className="w-1/3 px-[15px]">
-                        <div className="rounded-[15px] overflow-hidden bg-[rgba(255,255,255,0.05)] p-[30px] mb-[30px]">
+                    <div className="w-1/3 lg:w-full px-[15px]">
+                        <div className="rounded-[15px] overflow-hidden bg-[rgba(255,255,255,0.05)] p-[30px] md:px-[15px] md:py-[25px] mb-[30px] lg:mb-[20px]">
                             <ul className='my-[-20px]'>
                                 {tokenInfo.map((item, idx) => (
                                     <li
                                         key={idx}
-                                        className="text-[16px] font-[700] text-white py-[20px] border-b-[1px] gap-[10px] last:border-0 border-[rgba(255,255,255,0.10)] flex items-center justify-between space-grotesk"
+                                        className="text-[16px] lg:text-[14px] font-[700] text-white py-[20px] lg:py-[15px] border-b-[1px] gap-[10px] last:border-0 border-[rgba(255,255,255,0.10)] flex items-center justify-between space-grotesk"
                                     >
                                         <span>{item.label}</span>
                                         {item.isBadge ? (
@@ -69,7 +69,7 @@ const InvestContent = () => {
                                                 {item.value}
                                             </span>
                                         ) : (
-                                            <span className="text-[18px]">
+                                            <span className="text-[18px] lg:text-[16px]">
                                                 {item.value} {item.unit && <span className="text-[#38FF3F]">{item.unit}</span>}
                                             </span>
                                         )}
@@ -80,17 +80,17 @@ const InvestContent = () => {
                     </div>
 
                     {/* Your Position */}
-                    <div className="w-2/3 px-[15px]">
-                        <div className="rounded-[15px] overflow-hidden bg-[rgba(255,255,255,0.05)] p-[30px] mb-[30px]">
+                    <div className="w-2/3 lg:w-full px-[15px]">
+                        <div className="rounded-[15px] overflow-hidden bg-[rgba(255,255,255,0.05)] p-[30px] md:px-[15px] md:pt-[20px] md:pb-[30px] mb-[30px] lg:mb-[20px]">
                             <h3 className="mb-[20px] text-white font-[700] text-[24px] space-grotesk leading-[120%]">Your Position</h3>
-                            <div className="flex flex-wrap mx-[-15px] mb-[-30px]">
+                            <div className="flex flex-wrap mx-[-15px] mb-[-30px] mg:mx-[-10px]">
                                 {positionData.map((pos, index) => (
-                                    <div key={index} className="w-1/2 px-[15px]">
-                                        <div className="bg-[rgba(255,255,255,0.10)] px-[20px] py-[18px] flex items-center justify-between gap-[10px] rounded-[10px] mb-[30px]">
-                                            <span className="text-[rgba(255,255,255,0.90)] text-[16px] font-[700] leading-[120%] space-grotesk">
+                                    <div key={index} className="w-1/2 sm:w-full px-[15px] lg:px-[10px]">
+                                        <div className="bg-[rgba(255,255,255,0.10)] px-[20px] py-[18px] flex items-center justify-between gap-[10px] rounded-[10px] mb-[30px] lg:mb-[20px]">
+                                            <span className="text-[rgba(255,255,255,0.90)] text-[16px] md:text-[14px] font-[700] leading-[120%] space-grotesk">
                                                 {pos.label}
                                             </span>
-                                            <span className="text-[#FFF] text-[18px] font-[700] leading-[120%] space-grotesk">
+                                            <span className="text-[#FFF] text-[18px] md:text-[16px] font-[700] leading-[120%] space-grotesk">
                                                 {pos.value}
                                             </span>
                                         </div>

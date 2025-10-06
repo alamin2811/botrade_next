@@ -12,7 +12,7 @@ const VaultActions = () => {
     : "0.000000";
 
   return (
-    <div className="rounded-[15px] overflow-hidden bg-[rgba(255,255,255,0.05)] p-[30px] min-h-[552px] mb-[30px]">
+    <div className="rounded-[15px] overflow-hidden bg-[rgba(255,255,255,0.05)] p-[30px] md:px-[15px] md:py-[20px] min-h-[552px] mb-[30px] lg:mb-[20px]">
       {/* Header */}
       <div className="flex items-center justify-start gap-[10px] mb-[40px]">
         <h3 className="text-white font-[700] text-[24px] space-grotesk leading-[120%]">
@@ -101,7 +101,7 @@ const VaultActions = () => {
             </div>
             <button
               href="#"
-              className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-[none] outline-[none] box-shadow-[none] rounded-[10px] h-[60px] w-full mx-auto px-[15px] flex items-center justify-center gap-[10px] text-[#111] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk lg:hidden"
+              className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-[none] outline-[none] box-shadow-[none] rounded-[10px] h-[60px] md:h-[50px] w-full mx-auto px-[15px] flex items-center justify-center gap-[10px] text-[#111] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk"
             >
               <span className="btn-hov-text">
                 <span className="btn-text">Link Email To Join Waitlist</span>
