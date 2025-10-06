@@ -1,5 +1,5 @@
+import Details from '@/src/Component/App/Details/Index'
 import React from 'react'
-import Details from '@/src/Component/App/Details'
 
 const DetailsPage = () => {
   return (

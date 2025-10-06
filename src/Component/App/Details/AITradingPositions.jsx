@@ -224,8 +224,8 @@ const AITradingPositions = () => {
         </p>
       </div>
 
-      <div className="relative mt-[30px] overflow-x-auto">
-        <div className="min-w-[950px]">
+      <div className="relative mt-[30px] lg:overflow-x-auto">
+        <div className="lg:min-w-[950px]">
           {/* table Header*/}
           <div className="flex items-end justify-between uppercase text-[14px] font-[600] text-white mb-[10px]">
             <div className="w-[10%] px-[15px]">Token</div>

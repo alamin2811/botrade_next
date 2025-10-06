@@ -2,12 +2,10 @@ import React from 'react'
 import Header from '../../Core/Header/Header'
 import ContainerWrapper from '../../Core/ContainerWrapper'
 import Footer from '../../Core/Footer'
-import { Icon } from '@iconify/react'
-import Link from 'next/link'
 import AccountInfo from './AccountInfo'
-import DeleteAccount from './deleteAccount'
 import WalletInfo from './WalletInfo'
 import InvestingEligibility from './InvestingEligibility'
+import DeleteAccount from './DeleteAccount'
 
 const ProfileSettings = () => {
     return (
