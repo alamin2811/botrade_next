@@ -15,7 +15,7 @@ const Footer = () => {
               <li><Link href="#">Cookies</Link></li>
               <li><Link href="#">Privacy policy</Link></li>
             </ul>
-            <p className='text-[14px] font-[500] text-[rgba(255,255,255,0.70)] mb-[30px] md:mb-[15px]'><span className='text-white'>* Disclaimer :</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&lsquo;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing </p>
+            <p className='text-[14px] font-[500] text-[rgba(255,255,255,0.70)] mb-[30px] md:mb-[15px]'><span className='text-white'>* Disclaimer :</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&lsquo;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&lsquo;t anything embarrassing </p>
             <p className='text-[16px] md:text-[14px] font-[500] text-[rgba(255,255,255,0.70)]'>© 2025 <Link href="#" className='hover:text-white'>Botrade Labs AG.</Link> All rights reserved.</p>
           </div>
           <div className="w-1/2 lg:w-1/3 md:w-full px-[15px]">
