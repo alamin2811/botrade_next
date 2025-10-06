@@ -54,9 +54,9 @@ const PerformanceDashboard = () => {
   const [activeTab, setActiveTab] = useState("testnet");
 
   return (
-    <div className="relative z-10 mb-[50px]">
+    <div className="relative z-10 mb-[50px] xl:mb-[30px]">
       {/* Tabs */}
-      <div className="flex items-center justify-start px-[10px] rounded-t-[15px] pt-[10px] gap-[10px] max-w-[335px] w-full bg-[rgba(255,255,255,0.05)]">
+      <div className="flex items-center justify-start px-[10px] rounded-t-[15px] pt-[10px] gap-[10px] max-w-[335px] 2xsm:max-w-full w-full bg-[rgba(255,255,255,0.05)]">
         <button
           onClick={() => setActiveTab("testnet")}
           className={`w-[150px] h-[50px] rounded-[10px] text-[16px] font-[700] transition-all ${
@@ -75,32 +75,32 @@ const PerformanceDashboard = () => {
         </button>
       </div>
 
-      <div className="rounded-[15px] rounded-tl-[0] px-[30px] py-[40px] bg-[rgba(255,255,255,0.05)]">
-        <div className="flex items-center justify-between mb-[30px]">
-          <div className="relative">
+      <div className="rounded-[15px] rounded-tl-[0] 2xsm:rounded-tr-[0px] px-[30px] xl:px-[20px] py-[40px] bg-[rgba(255,255,255,0.05)]">
+        <div className="flex items-center justify-between lg:flex-wrap mb-[30px]">
+          <div className="relative lg:w-full lg:mb-[20px]">
             <h2 className="text-[24px] font-[700] space-grotesk mb-[5px] text-[#FFF]">
               Performance Dashboard
             </h2>
-            <p className="text-[18px] font-[500] text-[rgba(255,255,255,0.90)] mb-0">
+            <p className="text-[18px] xl:text-[16px] font-[500] text-[rgba(255,255,255,0.90)] mb-0">
               Live performance metrics and equity curve
             </p>
           </div>
 
           {/* Stats Row */}
-          <div className="flex lg:flex-wrap gap-[20px] text-white font-[700] space-grotesk max-w-[745px] w-full">
-            <div className="flex items-center justify-between px-[20px] py-[10px] h-[50px] bg-[rgba(217,217,217,0.10)] rounded-[10px] max-w-[235px] w-full gap-[16px]">
-              <p className="text-[16px]">Current APY</p>
-              <p className="text-[18px] bg-gradient-to-r from-[#38FF3F] to-[#00BD94] bg-clip-text text-transparent font-semibold">
+          <div className="flex lg:flex-wrap justify-end lg:justify-between gap-[20px] xl:gap-[10px] lg:gap-x-0 text-white font-[700] space-grotesk max-w-[745px] xl:max-w-[620px] lg:max-w-full ml-[auto] w-full">
+            <div className="flex items-center justify-between px-[20px] xl:px-[15px] py-[10px] h-[50px] bg-[rgba(217,217,217,0.10)] rounded-[10px] max-w-[235px] xl:max-w-[200px] lg:max-w-[31%] sm:max-w-full w-full ">
+              <p className="text-[16px] xl:text-[14px]">Current APY</p>
+              <p className="text-[18px] xl:text-[16px] bg-gradient-to-r from-[#38FF3F] to-[#00BD94] bg-clip-text text-transparent font-semibold">
                 120.50%
               </p>
             </div>
-            <div className="flex items-center justify-between px-[20px] py-[10px] h-[50px] bg-[rgba(217,217,217,0.10)] rounded-[10px] max-w-[235px] w-full gap-[16px]">
-              <p className="text-[16px]">Open Positions</p>
-              <p className="text-[18px]">1</p>
+            <div className="flex items-center justify-between px-[20px] xl:px-[15px] py-[10px] h-[50px] bg-[rgba(217,217,217,0.10)] rounded-[10px] max-w-[235px] xl:max-w-[160px] lg:max-w-[31%] sm:max-w-[48%] lg:gap-0 w-full gap-[16px]">
+              <p className="text-[16px] xl:text-[14px]">Open Positions</p>
+              <p className="text-[18px] xl:text-[16px]">1</p>
             </div>
-            <div className="flex items-center justify-between px-[20px] py-[10px] h-[50px] bg-[rgba(217,217,217,0.10)] rounded-[10px] max-w-[235px] w-full gap-[16px]">
-              <p className="text-[16px]">TVL</p>
-              <p className="text-[18px]">$1,108.11</p>
+            <div className="flex items-center justify-between px-[20px] xl:px-[15px] py-[10px] h-[50px] bg-[rgba(217,217,217,0.10)] rounded-[10px] max-w-[235px] xl:max-w-[160px] lg:max-w-[31%] sm:max-w-[48%] lg:gap-0 w-full gap-[16px]">
+              <p className="text-[16px] xl:text-[14px]">TVL</p>
+              <p className="text-[18px] xl:text-[16px]">$1,108.11</p>
             </div>
           </div>
         </div>

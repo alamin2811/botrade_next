@@ -66,8 +66,9 @@ const Roadmap = () => {
     ),
     customPaging: () => <div className="dot-bar"></div>,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
+      { breakpoint: 1230, settings: { slidesToShow: 3 } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 545, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -85,7 +86,7 @@ const Roadmap = () => {
   return (
     <div className="relative z-10 mt-[-500px]">
       <ContainerWrapper>
-        <div className="max-w-[450px] mx-auto mb-[40px]">
+        <div className="max-w-[450px] mx-auto mb-[40px] lg:mb-[30px] md:mb-[20px]">
           <HomeSectionTitle
             title="Our future: AI Based Crypto Hedge Fund"
             alignment="text-center"
@@ -156,7 +157,8 @@ const Roadmap = () => {
             background: rgba(255, 255, 255, 0.04);
             max-width: 470px;
             margin: auto;
-            margin-top: 33px
+            margin-top: 33px;
+            border-radius: 5px;
         }
         .custom-dots li {
           width: 96px;
@@ -172,6 +174,12 @@ const Roadmap = () => {
         .custom-dots .dot-bar {
           width: 100%;
           height: 100%;
+        }
+        @media screen and (max-width: 768px)  {
+          .custom-dots{
+            margin-top: 15px;
+            max-width: 300px;
+          }
         }
       `}</style>
     </div>

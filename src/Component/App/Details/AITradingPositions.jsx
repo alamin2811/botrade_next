@@ -106,7 +106,7 @@ const AITradingPositions = () => {
       statusColor: "#FF1F1F",
       pnlColor: "#FF1F1F",
     },
-    
+
     {
       token: "TRUMP",
       type: "Long",
@@ -214,7 +214,7 @@ const AITradingPositions = () => {
   ];
 
   return (
-    <div className="rounded-[15px] relative z-10 px-[30px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)]">
+    <div className="rounded-[15px] relative z-10 px-[30px] xl:px-[20px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)]">
       <div className="relative">
         <h2 className="text-[24px] font-[700] space-grotesk mb-[5px] text-[#FFF]">
           AI Trading Positions
@@ -224,58 +224,59 @@ const AITradingPositions = () => {
         </p>
       </div>
 
-      <div className="relative mt-[30px]">
-        {/* Header Row */}
-        <div className="flex items-end justify-between uppercase text-[14px] font-[600] text-white mb-[10px]">
-          <div className="w-[10%] px-[15px]">Token</div>
-          <div className="w-[10%] px-[15px]">Type</div>
-          <div className="w-[10%] px-[15px]">Amount</div>
-          <div className="w-[15%] px-[15px]">Open Price</div>
-          <div className="w-[15%] px-[15px]">Close Price</div>
-          <div className="w-[10%] px-[15px]">Status</div>
-          <div className="w-[20%] px-[15px]">Open Date(UTC)</div>
-          <div className="w-[10%] text-right px-[15px]">P&L</div>
-        </div>
+      <div className="relative mt-[30px] overflow-x-auto">
+        <div className="min-w-[950px]">
+          {/* table Header*/}
+          <div className="flex items-end justify-between uppercase text-[14px] font-[600] text-white mb-[10px]">
+            <div className="w-[10%] px-[15px]">Token</div>
+            <div className="w-[10%] px-[15px]">Type</div>
+            <div className="w-[10%] px-[15px]">Amount</div>
+            <div className="w-[15%] px-[15px]">Open Price</div>
+            <div className="w-[15%] px-[15px]">Close Price</div>
+            <div className="w-[10%] px-[15px]">Status</div>
+            <div className="w-[20%] px-[15px]">Open Date(UTC)</div>
+            <div className="w-[10%] text-right px-[15px]">P&L</div>
+          </div>
 
-        {/* Table Rows */}
-        <div className="relative max-h-[442px] overflow-y-auto pr-[15px] mr-[-20px] custom-scrollbar">
-          {positions.map((pos, index) => (
-            <div
-              key={index}
-              className="flex items-end justify-between text-[16px] font-[500] mb-[6px] last:mb-0 text-[rgba(255,255,255,0.90)] rounded-[10px] backdrop-blur-[5px] py-[10px]"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.05) 100%)",
-              }}
-            >
-              <div className="w-[10%] px-[15px] uppercase">{pos.token}</div>
+          {/* Table Rows */}
+          <div className="relative max-h-[442px] overflow-y-auto pr-[15px] xl:pr-[5px] mr-[-20px] xl:mr-[-10px] custom-scrollbar">
+            {positions.map((pos, index) => (
               <div
-                className="w-[10%] px-[15px]"
-                style={{ color: pos.typeColor }}
+                key={index}
+                className="flex items-end justify-between text-[16px] xl:text-[14px] font-[500] mb-[6px] last:mb-0 text-[rgba(255,255,255,0.90)] rounded-[10px] backdrop-blur-[5px] py-[10px]"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.05) 100%)",
+                }}
               >
-                {pos.type}
+                <div className="w-[10%] px-[15px] uppercase">{pos.token}</div>
+                <div
+                  className="w-[10%] px-[15px]"
+                  style={{ color: pos.typeColor }}
+                >
+                  {pos.type}
+                </div>
+                <div className="w-[10%] px-[15px]">{pos.amount}</div>
+                <div className="w-[15%] px-[15px]">{pos.openPrice}</div>
+                <div className="w-[15%] px-[15px]">{pos.closePrice}</div>
+                <div
+                  className="w-[10%] px-[15px]"
+                  style={{ color: pos.statusColor }}
+                >
+                  {pos.status}
+                </div>
+                <div className="w-[20%] px-[15px]">{pos.openDate}</div>
+                <div
+                  className="w-[10%] text-right px-[15px]"
+                  style={{ color: pos.pnlColor }}
+                >
+                  {pos.pnl}
+                </div>
               </div>
-              <div className="w-[10%] px-[15px]">{pos.amount}</div>
-              <div className="w-[15%] px-[15px]">{pos.openPrice}</div>
-              <div className="w-[15%] px-[15px]">{pos.closePrice}</div>
-              <div
-                className="w-[10%] px-[15px]"
-                style={{ color: pos.statusColor }}
-              >
-                {pos.status}
-              </div>
-              <div className="w-[20%] px-[15px]">{pos.openDate}</div>
-              <div
-                className="w-[10%] text-right px-[15px]"
-                style={{ color: pos.pnlColor }}
-              >
-                {pos.pnl}
-              </div>
-            </div>
-          ))}
-          
-          {/* Scrollbar Styles */}
-                <style jsx>{`
+            ))}
+
+            {/* Scrollbar Styles */}
+            <style jsx>{`
                     .custom-scrollbar::-webkit-scrollbar {
                       width: 6px;
                     }
@@ -290,10 +291,11 @@ const AITradingPositions = () => {
                       background-color: rgba(255, 255, 255, 0.2);
                     }
                 `}</style>
+          </div>
         </div>
       </div>
 
-      {/* Footer */}
+      {/* table Footer */}
       <div className="flex items-center justify-between gap-[10px] text-[rgba(255,255,255,0.50)] text-[16px] font-[500] mb-[10px] mt-[20px]">
         <span>Showing 49 of 335 positions</span>
         <span>Page 1 of 7</span>

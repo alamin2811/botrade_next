@@ -35,30 +35,30 @@ const FeatureSection = () => {
   ];
 
   return (
-    <div className="mt-[-145px]">
+    <div className="mt-[-145px] ">
       <ContainerWrapper>
-        <div className="flex flex-wrap items-start justify-start mx-[-15px]">
+        <div className="flex flex-wrap items-start justify-start mx-[-15px] xl:mx-[-10px]">
           {features.map((feature, i) => (
-            <div key={i} className="px-[15px] md:w-full lg:w-1/2 w-1/3">
+            <div key={i} className="px-[15px] xl:px-[10px] sm:w-full lg:w-1/2 w-1/3">
               <div
-                className="py-[40px] px-[30px] rounded-[15px] mb-[30px]"
+                className="py-[40px] px-[30px] xl:py-[25px] xl:px-[20px] rounded-[15px] mb-[30px] xl:mb-[20px]"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%)",
                 }}
               >
                 {/* Title */}
-                <h4 className="mb-[25px] text-white space-grotesk text-[24px] font-[700]">
+                <h4 className="mb-[25px] xl:mb-[15px] text-white space-grotesk text-[24px] xl:text-[20px] font-[700]">
                   {feature.title}
                 </h4>
 
                 {/* Description */}
-                <p className="text-[16px] font-[500] text-white mb-[28px]">
+                <p className="text-[16px] font-[500] text-white mb-[28px] xl:mb-[20px]">
                   {feature.description}
                 </p>
 
                 {/* APY Box */}
-                <div className="flex items-center justify-between gap-[10px] bg-[rgba(217,217,217,0.10)] h-[60px] rounded-[10px] px-[20px] py-[15px] mb-[30px]">
+                <div className="flex items-center justify-between gap-[10px] bg-[rgba(217,217,217,0.10)] h-[60px] rounded-[10px] px-[20px] py-[15px] mb-[30px] xl:mb-[15px]">
                   {feature.showAPY ? (
                     <>
                       <span className="space-grotesk text-[16px] font-[700] text-white">
@@ -88,7 +88,7 @@ const FeatureSection = () => {
                 <h6 className="text-[14px] space-grotesk font-[500] uppercase text-white mb-[5px]">
                   Strategy:
                 </h6>
-                <p className="text-[16px] font-[500] text-white mb-[30px]">
+                <p className="text-[16px] font-[500] text-white mb-[30px] xl:mb-[20px]">
                   {feature.strategy}
                 </p>
 

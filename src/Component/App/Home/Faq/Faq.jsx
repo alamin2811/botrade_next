@@ -51,7 +51,7 @@ const Faq = () => {
     };
 
     return (
-        <div className='pb-[105px] mt-[-40px] lg:py-[70px] md:pt-[40px] md:pb-[20px] sm:pb-[10px] relative z-10' id="faq">
+        <div className='pb-[105px] mt-[-40px] lg:py-[70px] md:pt-[40px] md:pb-[70px] sm:pb-[50px] relative z-10' id="faq">
             <div className="px-[20px] md:px-[14px] max-w-[1210px] mx-auto lg:max-w-[720px]">
                 <div className='max-w-[375px] mx-auto mb-[30px]'>
                     <HomeSectionTitle title="Frequently Asked Questions" alignment="text-center" />

@@ -48,8 +48,8 @@ const PerformanceSummary = () => {
   ];
 
   return (
-    <div className="relative z-10 rounded-[15px] px-[30px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)] mb-[50px]">
-      <div className="flex items-center justify-between gap-[10px] mb-[30px]">
+    <div className="relative z-10 rounded-[15px] px-[30px] xl:px-[20px] pb-[10px] xl:pb-0 pt-[40px] xl:pt-[25px] bg-[rgba(255,255,255,0.05)] mb-[50px] xl:mb-[30px]">
+      <div className="flex items-center justify-between gap-x-[10px] mb-[30px] xl:mb-[10px] flex-wrap xsm:mb-[20px]">
         <h2 className="text-[24px] font-[700] space-grotesk mb-[5px] text-[#FFF]">
           Performance Dashboard
         </h2>
@@ -58,21 +58,21 @@ const PerformanceSummary = () => {
         </p>
       </div>
 
-      <div className="flex items-start justify-start mx-[-13px]">
+      <div className="flex items-start justify-start flex-wrap mx-[-13px] xl:mx-[-8px]">
         {columns.map((col, colIndex) => (
-          <div key={colIndex} className="w-1/4 px-[13px]">
-            <div className="bg-[rgba(255,255,255,0.05)] min-h-[420px] py-[25px] px-[20px] rounded-[15px] mb-[30px]">
+          <div key={colIndex} className="w-1/4 lg:w-1/2 xsm:w-full px-[13px] xl:px-[8px]">
+            <div className="bg-[rgba(255,255,255,0.05)] min-h-[400px] xl:min-h-[420px] lg:min-h-[380px] xsm:min-h-[auto] py-[25px] px-[20px] xl:px-[15px] rounded-[15px] mb-[30px] xl:mb-[20px]">
               <ul className="my-[-15px]">
                 {col.map((item, i) => (
                   <li
                     key={i}
-                    className="flex items-end justify-between gap-[5px] py-[7px]"
+                    className="flex items-start justify-between gap-[5px] py-[10.5px] leading-[130%]"
                   >
-                    <span className="text-[14px] font-[500] text-[rgba(255,255,255,0.90)]">
+                    <span className="text-[14px] xl:text-[13px] font-[500] text-[rgba(255,255,255,0.90)]">
                       {item.label}
                     </span>
                     <span
-                      className="text-[16px] font-[700]"
+                      className="text-[16px] xl:text-[14px] font-[700]"
                       style={{ color: item.color || "#FFF" }}
                     >
                       {item.value}
