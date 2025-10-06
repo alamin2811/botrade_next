@@ -25,19 +25,19 @@ const OurPartners = () => {
           Working with industry leaders to build the future of decentralized finance
         </p>
 
-        <div className="border-[1px] border-[rgba(255,255,255,0.12)] rounded-[30px]">
+        <div className="border-[1px] border-[rgba(255,255,255,0.12)] rounded-[30px] overflow-hidden">
           <ul className="flex items-center justify-between flex-wrap">
             {partners.map((logo, index) => (
               <li
                 key={index}
                 className="
                   relative flex items-center justify-center investors-logo
-    w-1/6 lg:w-1/3 xsm:w-1/2
-    px-[20px] xl:px-[10px] py-[10px] h-[110px]
-    border-b border-[rgba(255,255,255,0.12)]
-    last:border-b-0
-    lg:[&:nth-last-child(-n+3)]:border-b-0
-    xsm:last:border-t-[1px] last:mt-[-1px]
+                  w-1/6 lg:w-1/3 xsm:w-1/2
+                  px-[20px] xl:px-[10px] py-[10px] h-[110px]
+                  lg:border-b border-[rgba(255,255,255,0.12)]
+                  last:border-b-0
+                  lg:[&:nth-last-child(-n+3)]:border-b-0
+                  xsm:last:border-t-[1px] last:mt-[-1px]
                 "
               >
                 <div

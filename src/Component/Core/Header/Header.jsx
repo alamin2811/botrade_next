@@ -1,63 +1,81 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState, useEffect, useRef } from "react";
 import HomeMobileMenu from "./HomeMobileMenu";
 import ContainerWrapper from "@/src/Component/Core/ContainerWrapper";
-import { useRouter } from "next/router";
+import { ethers } from "ethers";
 import { Icon } from "@iconify/react";
 
 const Header = () => {
-  const [account, setAccount] = useState(null);
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [walletAddress, setWalletAddress] = useState("");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.ethereum) {
-      window.ethereum.request({ method: "eth_accounts" }).then((accounts) => {
-        if (accounts.length > 0) setAccount(accounts[0]);
-      });
+  // ✅ Connect Wallet (MetaMask)
+  const connectWallet = async () => {
+    try {
+      if (typeof window !== "undefined" && window.ethereum) {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const accounts = await provider.send("eth_requestAccounts", []);
+        if (accounts && accounts.length > 0) {
+          setWalletAddress(accounts[0]);
+        }
+      } else {
+        alert("MetaMask not detected. Please install MetaMask extension.");
+      }
+    } catch (error) {
+      console.error("MetaMask connection failed:", error);
+    }
+  };
 
+  // ✅ Auto detect wallet if already connected
+  useEffect(() => {
+    const checkConnection = async () => {
+      if (typeof window !== "undefined" && window.ethereum) {
+        try {
+          const provider = new ethers.BrowserProvider(window.ethereum);
+          const accounts = await provider.listAccounts();
+          if (accounts.length > 0) {
+            setWalletAddress(accounts[0].address);
+          }
+        } catch (err) {
+          console.error("Error checking wallet connection:", err);
+        }
+      }
+    };
+    checkConnection();
+
+    // Listen for account changes
+    if (typeof window !== "undefined" && window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
-        if (accounts.length > 0) setAccount(accounts[0]);
-        else setAccount(null);
+        if (accounts.length > 0) {
+          setWalletAddress(accounts[0]);
+        } else {
+          setWalletAddress("");
+        }
       });
     }
   }, []);
 
-  // Detect click outside dropdown
+  // ✅ Disconnect wallet
+  const disconnectWallet = () => {
+    setWalletAddress("");
+    setDropdownOpen(false);
+  };
+
+  // ✅ Click outside dropdown to close
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setShowDropdown(false);
+        setDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const connectWallet = async () => {
-    try {
-      if (!window.ethereum) {
-        alert("MetaMask not detected. Please install MetaMask extension.");
-        return;
-      }
-
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-
-      setAccount(accounts[0]);
-    } catch (error) {
-      console.error("Wallet connection failed:", error);
-    }
-  };
-
-  const disconnectWallet = () => {
-    setAccount(null);
-    setShowDropdown(false);
-  };
-
+  // ✅ Shorten address
   const shortAddress = (addr) =>
     addr ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : "";
 
@@ -71,8 +89,8 @@ const Header = () => {
               <Image
                 src="/assets/images/logo/logo.svg"
                 alt="logo"
-                height={80}
-                width={190}
+                height="80"
+                width="190"
                 className="h-[80px] w-[190px] xl:w-[130px] md:h-[65px] md:w-[150px]"
               />
             </Link>
@@ -81,101 +99,113 @@ const Header = () => {
           {/* Right Section */}
           <div className="right">
             <div className="flex items-center justify-end gap-[16px]">
-              {/* Social Buttons */}
+              {/* ✅ Social Icons */}
               <ul className="flex items-center justify-end gap-[16px] lg:hidden">
-                {["book.svg", "tg.svg", "x.svg"].map((icon, i) => (
-                  <li key={i} className="social-icon-btn">
+                {[
+                  { href: "#", src: "./assets/images/icons/book.svg", size: 22 },
+                  { href: "#", src: "./assets/images/icons/tg.svg", size: 20 },
+                  { href: "#", src: "./assets/images/icons/x.svg", size: 16 },
+                ].map((icon, idx) => (
+                  <li key={idx} className="social-icon-btn group relative">
                     <Link
-                      href="#"
-                      className="flex btn-has-shape items-center justify-center rounded-[12px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[5px] h-[50px] w-[50px]"
+                      href={icon.href}
+                      className="flex btn-has-shape items-center justify-center rounded-[12px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[5px] h-[50px] w-[50px] transition-all duration-300 hover:bg-[rgba(255,255,255,0.20)]"
                     >
                       <img
-                        src={`./assets/images/icons/${icon}`}
+                        src={icon.src}
                         alt="icon"
-                        className="w-[20px]"
+                        style={{ width: `${icon.size}px` }}
+                        className="transition-transform duration-300 group-hover:rotate-[15deg]"
                       />
                     </Link>
                   </li>
                 ))}
               </ul>
 
-              {/* Action Buttons */}
-              <div
-                ref={dropdownRef}
-                className="relative bg-[rgba(255,255,255,0.10)] lg:hidden p-[7px] rounded-[12px] flex items-end justify-end gap-[8px]"
-              >
+              {/* Buttons */}
+              <div className="bg-[rgba(255,255,255,0.10)] lg:hidden p-[7px] rounded-[12px] flex items-end justify-end relative">
                 <Link
                   href="/ai-agent"
-                  className="buy-btn hov-btn no-border bg-transparent rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] text-white font-[600] text-[16px] space-grotesk"
+                  className="buy-btn hov-btn no-border bg-transparent group rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] text-white font-[600] text-[16px] space-grotesk"
                 >
                   <img
                     src="/assets/images/icons/ai-agent.svg"
                     alt="icon"
                     className="brightness-[100]"
                   />
-                  <span>AI Agent</span>
+                  <span className="btn-hov-text">
+                    <span className="btn-text">AI Agent</span>
+                    <span className="btn-text">AI Agent</span>
+                  </span>
                 </Link>
 
                 <Link
                   href="/terminal"
-                  className="buy-btn hov-btn no-border bg-transparent rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] text-white font-[600] text-[16px] space-grotesk"
+                  className="buy-btn hov-btn no-border bg-transparent group rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] text-white font-[600] text-[16px] space-grotesk"
                 >
                   <img
                     src="/assets/images/icons/terminal.svg"
                     alt="icon"
                     className="brightness-[100]"
                   />
-                  <span>Terminal</span>
+                  <span className="btn-hov-text">
+                    <span className="btn-text">Terminal</span>
+                    <span className="btn-text">Terminal</span>
+                  </span>
                 </Link>
 
-                {/* ✅ Connect Wallet / Dropdown */}
-                {account ? (
-                  <div className="relative">
+                {/* ✅ Wallet Button */}
+                <div className="relative" ref={dropdownRef}>
+                  {!walletAddress ? (
                     <button
-                      onClick={() => setShowDropdown((prev) => !prev)}
-                      className="buy-btn hov-btn no-border group border-[none] outline-[none] rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] text-[#111111] text-center font-[600] text-[16px] space-grotesk"
+                      onClick={connectWallet}
+                      className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-none rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] text-[#111] font-[600] text-[16px] space-grotesk"
                     >
                       <img
                         src="/assets/images/icons/wallet.svg"
-                        alt="wallet"
+                        alt="icon"
                         className="brightness-0"
                       />
-                      <span>{shortAddress(account)}</span>
+                      <span className="btn-hov-text">
+                        <span className="btn-text">Join Waitlist</span>
+                        <span className="btn-text">Join Waitlist</span>
+                      </span>
                     </button>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                        className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-none rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] text-[#111] font-[600] text-[16px] space-grotesk"
+                      >
+                        <img
+                          src="/assets/images/icons/wallet.svg"
+                          alt="icon"
+                          className="brightness-0"
+                        />
+                        {shortAddress(walletAddress)}
+                      </button>
 
-                    {showDropdown && (
-                      <div className="absolute font-[600] text-[16px] space-grotesk right-[-8px] mt-[10px] w-[180px] rounded-[10px] bg-[rgba(255,255,255,0.10)] backdrop-blur-[8px] p-[8px] shadow-lg flex flex-col animate-fadeIn">
-                        <Link
-                          href="/profile-settings"
-                          className="px-[8px] py-[8px] text-white text-[15px] rounded-[8px] hover:bg-[rgba(255,255,255,0.15)] flex items-center justify-start gap-[8px] transition-all duration-200"
-                          onClick={() => setShowDropdown(false)}
-                        >
-                          <Icon icon="akar-icons:gear" width="20" height="20" />
-                          Profile Settings
-                        </Link>
-                        <button
-                          onClick={disconnectWallet}
-                          className="text-left px-[8px] py-[8px] text-[#FF1F1F] text-[15px] rounded-[8px] hover:bg-[rgba(255,255,255,0.15)] flex items-center justify-start gap-[8px] transition-all duration-200"
-                        >
-                          <Icon icon="material-symbols:logout-rounded" width="20" height="20" />
-                          Disconnect
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <button
-                    onClick={connectWallet}
-                    className="buy-btn hov-btn no-border group border-[none] outline-[none] rounded-[10px] h-[36px] px-[15px] flex items-center justify-center gap-[10px] bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] text-[#111111] text-center font-[600] text-[16px] space-grotesk"
-                  >
-                    <img
-                      src="/assets/images/icons/wallet.svg"
-                      alt="wallet"
-                      className="brightness-0"
-                    />
-                    <span>Connect Wallet</span>
-                  </button>
-                )}
+                      {dropdownOpen && (
+                        <div className="absolute right-[-8px] mt-[10px] w-[200px] bg-[rgba(255,255,255,0.10)] p-[10px] backdrop-blur-[5px] rounded-[10px] overflow-hidden shadow-lg">
+                          <Link
+                            href="/profile-settings"
+                            className="px-[12px] py-[8px] rounded-[8px] flex items-center justify-start gap-[8px] text-white font-[600] text-[16px] space-grotesk hover:bg-[rgba(255,255,255,0.15)]"
+                          >
+                            <Icon icon="akar-icons:gear" width="20" height="20" />
+                            Profile Settings
+                          </Link>
+                          <button
+                            onClick={disconnectWallet}
+                            className="w-full text-left px-[12px] py-[8px] rounded-[8px] flex items-center justify-start gap-[8px] text-[#FF1F1F] font-[600] text-[16px] space-grotesk hover:bg-[rgba(255,255,255,0.15)]"
+                          >
+                            <Icon icon="material-symbols:logout-rounded" width="20" height="20" />
+                            Disconnect
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
               </div>
 
               <div className="hidden lg:block mr-[16px]">

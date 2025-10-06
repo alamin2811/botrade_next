@@ -35,7 +35,7 @@ const FeatureSection = () => {
   ];
 
   return (
-    <div className="mt-[-145px] ">
+    <div className="mt-[-145px] relative z-10">
       <ContainerWrapper>
         <div className="flex flex-wrap items-start justify-start mx-[-15px] xl:mx-[-10px]">
           {features.map((feature, i) => (
@@ -95,7 +95,7 @@ const FeatureSection = () => {
                 {/* Button */}
                 <Link
                   href={feature.buttonLink}
-                  className={`buy-btn hov-btn no-border group rounded-[10px] h-[50px] w-full mx-auto px-[15px] flex items-center justify-center gap-[10px] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk lg:hidden
+                  className={`buy-btn hov-btn no-border cursor-pointer group rounded-[10px] h-[50px] w-full mx-auto px-[15px] flex items-center justify-center gap-[10px] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk lg:hidden
                     ${feature.buttonDisabled
                       ? "pointer-events-none bg-[rgba(255,255,255,0.10)] text-[rgba(255,255,255,0.20)]"
                       : "bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] text-[#111]"}`}
