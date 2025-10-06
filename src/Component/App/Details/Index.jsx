@@ -22,7 +22,7 @@ const Details = () => {
                         <li className='flex items-center justify-start gap-[8px]'><img src="./assets/images/icons/check-circle.svg" alt="icon" />Fully Independently audited by Nethermind</li>
                     </ul>
                     <Link
-                        href='#'
+                        href='/invest'
                         className="buy-btn hov-btn no-border group bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] border-[none] outline-[none] box-shadow-[none] rounded-[10px] h-[60px] w-[200px] mx-auto px-[15px] flex items-center justify-center gap-[10px] text-[#111] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk"
                     >
                         <img src="./assets/images/icons/chart.svg" alt='icon' className='brightness-0' />

@@ -10,8 +10,8 @@ const FeatureSection = () => {
       apy: "120.50%",
       showAPY: true,
       strategy: "Automated trading with AI-driven market analysis",
-      buttonText: "Join Waitlist",
-      buttonLink: "#",
+      buttonText: "See Details",
+      buttonLink: "/details",
       buttonDisabled: false,
     },
     {
@@ -95,7 +95,7 @@ const FeatureSection = () => {
                 {/* Button */}
                 <Link
                   href={feature.buttonLink}
-                  className={`buy-btn hov-btn no-border group rounded-[10px] h-[60px] w-full mx-auto px-[15px] flex items-center justify-center gap-[10px] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk lg:hidden
+                  className={`buy-btn hov-btn no-border group rounded-[10px] h-[50px] w-full mx-auto px-[15px] flex items-center justify-center gap-[10px] capitalize text-center font-[600] text-[16px] sm:text[14px] space-grotesk lg:hidden
                     ${feature.buttonDisabled
                       ? "pointer-events-none bg-[rgba(255,255,255,0.10)] text-[rgba(255,255,255,0.20)]"
                       : "bg-[linear-gradient(96deg,#38FF3F_6.86%,#00BD94_97.02%)] text-[#111]"}`}
