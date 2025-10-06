@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <div className='main-header absolute z-[9999] top-0 left-0 w-full'>
       <ContainerWrapper>
-        <div className="flex items-center justify-between gap-[30px] py-[9px]">
+        <div className="flex items-center justify-between gap-[30px] py-[9px] lg:py-0">
           {/* Logo */}
           <div className="left">
             <Link href="/" className='logo'>
@@ -46,7 +46,7 @@ const Header = () => {
           {/* Right Section */}
           <div className="right">
             <div className="flex items-center justify-end gap-[16px]">
-              <ul className='flex items-center justify-end gap-[16px]'>
+              <ul className='flex items-center justify-end gap-[16px] lg:hidden'>
                 <li className="social-icon-btn">
                   <Link
                     href="#"
@@ -109,7 +109,7 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
-              <div className="bg-[rgba(255,255,255,0.10)] p-[7px] rounded-[12px] flex items-end justify-end">
+              <div className="bg-[rgba(255,255,255,0.10)] lg:hidden p-[7px] rounded-[12px] flex items-end justify-end">
                 {buttons.map((btn, i) => (
                   <Link
                     key={i}

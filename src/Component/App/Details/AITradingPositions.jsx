@@ -214,7 +214,7 @@ const AITradingPositions = () => {
   ];
 
   return (
-    <div className="rounded-[15px] px-[30px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)] mb-[50px]">
+    <div className="rounded-[15px] relative z-10 px-[30px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)]">
       <div className="relative">
         <h2 className="text-[24px] font-[700] space-grotesk mb-[5px] text-[#FFF]">
           AI Trading Positions

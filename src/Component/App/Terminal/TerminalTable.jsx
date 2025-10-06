@@ -54,45 +54,47 @@ const TerminalTable = () => {
     ];
 
     return (
-        <div className='bg-[rgba(255,255,255,0.05)] backdrop-blur-[10px] rounded-[15px] overflow-hidden max-h-[850px] py-[30px] px-[30px] mb-[120px] mt-[-435px]'>
-            {/* Header */}
-            <div className="flex items-start justify-between text-[14px] font-[600] uppercase text-white mb-[10px]">
-                <div className='w-[60%] px-[15px]'>Analysis</div>
-                <div className='w-[10%] px-[15px]'>Status</div>
-                <div className='w-[20%] px-[15px]'>Open Date (UTC)</div>
-                <div className='w-[10%] px-[15px]'>Link</div>
-            </div>
-
-            {/* Rows */}
-            <div className="text-[14px] font-[600] leading-[150%] max-h-[745px] overflow-y-scroll pr-[13px] mr-[-22px] custom-scrollbar">
-                {tableData.map((item, index) => (
-                    <div
-                        key={index}
-                        className="flex items-start justify-between rounded-[10px] backdrop-blur-[5px] py-[15px] mb-[8px] last:mb-0"
-                        style={{
-                            background:
-                                'linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.10) 100%)',
-                        }}
-                    >
-                        <div className='w-[60%] px-[15px] text-[rgba(255,255,255,0.90)]'>
-                            {item.analysis}
-                        </div>
-                        <div className='w-[10%] px-[15px] text-[rgba(56,255,63,0.90)]'>
-                            {item.status}
-                        </div>
-                        <div className='w-[20%] px-[15px] text-[rgba(255,255,255,0.90)]'>
-                            {item.date}
-                        </div>
-                        <div className='w-[10%] px-[15px] text-[rgba(56,255,63,0.90)]'>
-                            <Link href="#" className="hover:underline">
-                                {item.link}
-                            </Link>
-                        </div>
+        <div className='bg-[rgba(255,255,255,0.05)] backdrop-blur-[10px] rounded-[15px] overflow-hidden max-h-[850px] py-[30px] px-[30px] lg:py-[20px] lg:px-[15px] mb-[120px] lg:mb-[80px] md:mb-[60px] mt-[-435px]'>
+            <div className="lg:overflow-x-auto">
+                <div className="min-w-[800px]">
+                    {/* Header */}
+                    <div className="flex items-start justify-between text-[14px] font-[600] uppercase text-white mb-[10px]">
+                        <div className='w-[60%] xl:w-[45%] px-[15px]'>Analysis</div>
+                        <div className='w-[10%] xl:w-[15%] px-[15px]'>Status</div>
+                        <div className='w-[20%] xl:w-[20%] px-[15px]'>Open Date (UTC)</div>
+                        <div className='w-[10%] xl:w-[20%] px-[15px] text-right'>Link</div>
                     </div>
-                ))}
 
-                {/* Scrollbar Styles */}
-                <style jsx>{`
+                    {/* Rows */}
+                    <div className="text-[14px] font-[600] leading-[150%] max-h-[745px] overflow-y-scroll pr-[13px] mr-[-22px] custom-scrollbar">
+                        {tableData.map((item, index) => (
+                            <div
+                                key={index}
+                                className="flex items-start justify-between rounded-[10px] backdrop-blur-[5px] py-[15px] mb-[8px] last:mb-0"
+                                style={{
+                                    background:
+                                        'linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.10) 100%)',
+                                }}
+                            >
+                                <div className='w-[60%] xl:w-[45%] px-[15px] text-[rgba(255,255,255,0.90)]'>
+                                    {item.analysis}
+                                </div>
+                                <div className='w-[10%] xl:w-[15%] px-[15px] text-[rgba(56,255,63,0.90)]'>
+                                    {item.status}
+                                </div>
+                                <div className='w-[20%] xl:w-[20%] px-[15px] text-[rgba(255,255,255,0.90)]'>
+                                    {item.date}
+                                </div>
+                                <div className='w-[10%] xl:w-[20%] px-[15px] text-right text-[rgba(56,255,63,0.90)]'>
+                                    <Link href="#" className="hover:underline">
+                                        {item.link}
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
+
+                        {/* Scrollbar Styles */}
+                        <style jsx>{`
                     .custom-scrollbar::-webkit-scrollbar {
                       width: 6px;
                     }
@@ -107,6 +109,8 @@ const TerminalTable = () => {
                       background-color: rgba(255, 255, 255, 0.2);
                     }
                 `}</style>
+                    </div>
+                </div>
             </div>
         </div>
     )

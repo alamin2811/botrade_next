@@ -7,6 +7,7 @@ import PerformanceDashboard from './PerformanceDashboard'
 import ContainerWrapper from '../../Core/ContainerWrapper'
 import PerformanceSummary from './PerformanceSummary'
 import AITradingPositions from './AITradingPositions'
+import ReadyToJoin from './ReadyToJoin'
 
 const Details = () => {
     return (
@@ -34,6 +35,8 @@ const Details = () => {
                 <PerformanceDashboard />
                 <PerformanceSummary/>
                 <AITradingPositions/>
+                <ReadyToJoin/>
+                
             </ContainerWrapper>
             <Footer />
         </div>

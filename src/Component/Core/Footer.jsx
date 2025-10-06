@@ -4,22 +4,22 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className='bg-no-repeat bg-center py-[80px] rounded-t-[50px]' style={{ background: 'url(./assets/images/bg/footer-bg.png)', backgroundSize: 'cover' }}>
+    <div className='bg-no-repeat bg-center py-[80px] md:pt-[50px] md:pb-[25px] rounded-t-[50px] md:rounded-t-[30px]' style={{ background: 'url(./assets/images/bg/footer-bg.png)', backgroundSize: 'cover' }}>
       <ContainerWrapper>
-        <Link href="#" className='mb-[45px] flex'><img src="./assets/images/logo/logo.svg" alt="logo" className='max-w-[215px] w-full' /></Link>
-        <div className="flex items-start justify-start mx-[-15px]">
-          <div className="w-1/2 px-[15px]">
-            <ul className='flex items-center justify-start gap-[30px] text-[#FFF] font-[500] text-[16px] space-grotesk mb-[20px]'>
+        <Link href="#" className='mb-[45px] md:mb-[30px] flex'><img src="./assets/images/logo/logo.svg" alt="logo" className='max-w-[215px] w-full' /></Link>
+        <div className="flex items-start justify-start mx-[-15px] md:flex-wrap-reverse md:items-center md:gap-[30px]">
+          <div className="w-1/2 lg:w-2/3 md:w-full px-[15px]">
+            <ul className='flex items-center justify-start gap-x-[30px] gap-y-[12px] text-[#FFF] font-[500] text-[16px] space-grotesk mb-[20px] flex-wrap'>
               <li><Link href="#">Legal</Link></li>
               <li><Link href="#">Terms of use</Link></li>
               <li><Link href="#">Cookies</Link></li>
               <li><Link href="#">Privacy policy</Link></li>
             </ul>
-            <p className='text-[14px] font-[500] text-[rgba(255,255,255,0.70)] mb-[30px]'><span className='text-white'>* Disclaimer :</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing </p>
+            <p className='text-[14px] font-[500] text-[rgba(255,255,255,0.70)] mb-[30px] md:mb-[15px]'><span className='text-white'>* Disclaimer :</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&lsquo;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing </p>
             <p className='text-[16px] font-[500] text-[rgba(255,255,255,0.70)]'>© 2025 <Link href="#" className='hover:text-white'>Botrade Labs AG.</Link> All rights reserved.</p>
           </div>
-          <div className="w-1/2 px-[15px]">
-            <div className="max-w-[300px] ml-auto">
+          <div className="w-1/2 lg:w-1/3 md:w-full px-[15px]">
+            <div className="max-w-[300px] ml-auto md:mr-auto md:ml-0">
               <p className="text-white font-bold text-[18px] space-grotesk">
                 Say hello to :{" "}
                 <Link href="mailto:support@mail.com" className="bg-gradient-to-r from-[#38FF3F] to-[#00BD94] bg-clip-text text-transparent">

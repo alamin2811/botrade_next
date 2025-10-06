@@ -54,7 +54,7 @@ const PerformanceDashboard = () => {
   const [activeTab, setActiveTab] = useState("testnet");
 
   return (
-    <div className="relative mb-[50px]">
+    <div className="relative z-10 mb-[50px]">
       {/* Tabs */}
       <div className="flex items-center justify-start px-[10px] rounded-t-[15px] pt-[10px] gap-[10px] max-w-[335px] w-full bg-[rgba(255,255,255,0.05)]">
         <button

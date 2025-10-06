@@ -48,8 +48,8 @@ const PerformanceSummary = () => {
   ];
 
   return (
-    <div className="rounded-[15px] px-[30px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)] mb-[50px]">
-      <div className="relative flex items-center justify-between gap-[10px] mb-[30px]">
+    <div className="relative z-10 rounded-[15px] px-[30px] pb-[10px] pt-[40px] bg-[rgba(255,255,255,0.05)] mb-[50px]">
+      <div className="flex items-center justify-between gap-[10px] mb-[30px]">
         <h2 className="text-[24px] font-[700] space-grotesk mb-[5px] text-[#FFF]">
           Performance Dashboard
         </h2>

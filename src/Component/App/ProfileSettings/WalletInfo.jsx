@@ -20,10 +20,10 @@ const WalletInfo = () => {
     };
 
     return (
-        <div className="bg-[rgba(255,255,255,0.05)] rounded-[15px] overflow-hidden p-[30px] mb-[30px]">
+        <div className="bg-[rgba(255,255,255,0.05)] rounded-[15px] overflow-hidden p-[30px] md:p-[15px] mb-[30px] md:mb-[20px]">
             {/* Header */}
             <div className="flex items-center justify-start gap-[10px]">
-                <div className="h-[50px] w-[50px] rounded-[15px] flex items-center justify-center text-[#FFF] bg-[rgba(255,255,255,0.10)]">
+                <div className="min-h-[50px] min-w-[50px] max-h-[50px] max-w-[50px] rounded-[15px] flex items-center justify-center text-[#FFF] bg-[rgba(255,255,255,0.10)]">
                     <Icon icon="tabler:wallet" width="24" height="24" />
                 </div>
                 <div className="relative">
@@ -37,7 +37,7 @@ const WalletInfo = () => {
             </div>
 
             {/* External Wallet */}
-            <div className="flex items-center justify-between gap-[10px] bg-[rgba(56,255,63,0.08)] px-[15px] py-[10px] rounded-[15px] mt-[20px]">
+            <div className="flex items-center justify-between sm:flex-col sm:justify-start sm:items-start gap-[10px] bg-[rgba(56,255,63,0.08)] px-[15px] py-[10px] rounded-[15px] mt-[20px]">
                 <div className="flex items-center justify-start gap-[20px]">
                     <div className="text-[#38FF3F]">
                         <Icon icon="uil:envelope" width="24" height="24" />
@@ -50,7 +50,7 @@ const WalletInfo = () => {
                             {shortAddress}
                         </p>
                     </div>
-                    <div className="flex items-center justify-center h-[27px] px-[10px] text-[#38FF3F] text-[16px] font-[700] space-grotesk border-0 bg-[rgba(56,255,63,0.10)] rounded-[8px]">
+                    <div className="flex items-center justify-center sm:mt-[-20px] h-[27px] px-[10px] text-[#38FF3F] text-[16px] font-[700] space-grotesk border-0 bg-[rgba(56,255,63,0.10)] rounded-[8px]">
                         Connected
                     </div>
                 </div>
@@ -58,7 +58,7 @@ const WalletInfo = () => {
                 {/* Copy / Copied Button */}
                 <button
                     onClick={handleCopy}
-                    className={`flex items-center justify-center h-[27px] px-[10px] gap-[5px] text-[16px] font-[700] space-grotesk border-[1px] rounded-[8px] transition-all duration-300
+                    className={`flex items-center justify-center ml-[45px] h-[27px] px-[10px] gap-[5px] text-[16px] font-[700] space-grotesk border-[1px] rounded-[8px] transition-all duration-300
                         ${copied
                             ? 'text-[#38FF3F] bg-[rgba(56,255,63,0.10)] border-[rgba(56,255,63,0.30)]'
                             : 'text-[#38FF3F] bg-[rgba(255,255,255,0.05)] border-[rgba(56,255,63,0.30)]'
@@ -79,7 +79,7 @@ const WalletInfo = () => {
             </div>
 
             {/* Network Info */}
-            <div className="flex items-center justify-between gap-[10px] bg-[rgba(255,255,255,0.05)] px-[15px] py-[10px] rounded-[15px] mt-[20px]">
+            <div className="flex items-center justify-between sm:flex-col sm:justify-start sm:items-start gap-[10px] bg-[rgba(255,255,255,0.05)] px-[15px] py-[10px] rounded-[15px] mt-[20px]">
                 <div className="flex items-center justify-start gap-[20px]">
                     <div className="text-[#FFFFFF]">
                         <Icon icon="hugeicons:cellular-network" width="24" height="24" />
@@ -95,7 +95,7 @@ const WalletInfo = () => {
                 </div>
                 <Link
                     href="#"
-                    className="flex items-center justify-center h-[27px] px-[10px] text-[rgba(255,255,255,0.50)] text-[16px] font-[700] space-grotesk border-[1px] bg-[rgba(255,255,255,0.05)] rounded-[8px] border-[rgba(255,255,255,0.20)]"
+                    className="flex items-center ml-[45px] justify-center h-[27px] px-[10px] text-[rgba(255,255,255,0.50)] text-[16px] font-[700] space-grotesk border-[1px] bg-[rgba(255,255,255,0.05)] rounded-[8px] border-[rgba(255,255,255,0.20)]"
                 >
                     Connected
                 </Link>
